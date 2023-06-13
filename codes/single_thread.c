@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 100
+#define SIZE 10000
 
 int main(int argc, char *argv[]) {
     static int M1[SIZE][SIZE], M2[SIZE][SIZE], M3[SIZE][SIZE];
-    int count = 1;
+    struct timespec start_time, end_time;
+    double execution_time;
 
     printf("\n\nIniciando execução número %s", argv[1]);
 
@@ -29,23 +30,20 @@ int main(int argc, char *argv[]) {
 
     printf("\nFinalizou o preenchimento de M3.");
 
-    // Multiplicação Single-Thread
-    clock_t start_time = clock();
+    // Multiplicação
+    clock_gettime(CLOCK_MONOTONIC, &start_time);
 
     for (int i = 0; i < SIZE; i++) {
-        //Contador de progresso
-        //printf("\n%.3f", 100.0*count/(SIZE*SIZE));
-        
         for (int j = 0; j < SIZE; j++) {
             for (int k = 0; k < SIZE; k++) {
                 M3[i][j] += M1[i][k] * M2[k][j];
             }
-            count++;
         }
     }
 
-    clock_t end_time = clock();
-    double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    clock_gettime(CLOCK_MONOTONIC, &end_time);
+    execution_time = (end_time.tv_sec - start_time.tv_sec) +
+                     (end_time.tv_nsec - start_time.tv_nsec) / 1e9;
 
     printf("\nAlguns elementos da matriz resultante (M3) para checagem do resultado:\n");
     for (int i = 0; i < 10; i++) {
@@ -55,7 +53,7 @@ int main(int argc, char *argv[]) {
         printf("\n");
     }
 
-    // Imprimir e salvar o resultado (M3) e o tempo levado
+    // Salvar o tempo levado
     FILE* file = fopen("/home/kirlin/multithreading-C-multicore-computer/results/resultado_single_thread.txt", "a");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");

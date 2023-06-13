@@ -1,0 +1,3 @@
+
+Execução 1: 1803.25982 segundos
+Execução 2: 1794.06627 segundos
