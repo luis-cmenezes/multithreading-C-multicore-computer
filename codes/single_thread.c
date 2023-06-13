@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 10000
+#define SIZE 100
 
 int main(int argc, char *argv[]) {
     static int M1[SIZE][SIZE], M2[SIZE][SIZE], M3[SIZE][SIZE];
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Imprimir e salvar o resultado (M3) e o tempo levado
-    FILE* file = fopen("/home/kirlin/multithreading-C-multicore-computer/src/results/resultado_single_thread.txt", "a");
+    FILE* file = fopen("/home/kirlin/multithreading-C-multicore-computer/results/resultado_single_thread.txt", "a");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");
         return 1;
