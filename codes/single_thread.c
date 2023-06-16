@@ -9,8 +9,13 @@ int main(int argc, char *argv[]) {
     struct timespec start_time, end_time;
     double execution_time;
 
-    printf("\n\nIniciando execução número %s", argv[1]);
-
+    if (atoi(argv[2]) == 0){
+        printf("\n\nIniciando execução sem afinidade com 1 Thread número %s",argv[1]);
+    }
+    else{
+        printf("\n\nIniciando execução com afinidade com 1 Thread número %s",argv[1]);
+    }
+    
     // Inicializar M1 e M2 com valor 1
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
@@ -19,16 +24,12 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    printf("\nFinalizou o preenchimento de M1 e M2.");
-
     // Inicializar M3 com valor 0
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             M3[i][j] = 0;
         }
     }
-
-    printf("\nFinalizou o preenchimento de M3.");
 
     // Multiplicação
     clock_gettime(CLOCK_REALTIME, &start_time);
@@ -45,9 +46,9 @@ int main(int argc, char *argv[]) {
     execution_time = (end_time.tv_sec - start_time.tv_sec) +
                      (end_time.tv_nsec - start_time.tv_nsec) / 1e9;
 
-    printf("\nAlguns elementos da matriz resultante (M3) para checagem do resultado:\n");
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
+    printf("\nElementos da matriz resultante (M3) para checagem:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
             printf("%d ", M3[i][j]);
         }
         printf("\n");

@@ -10,5 +10,5 @@ done
 sync; sync; sync;
 
 for i in 1 2 3 4 5; do
-  taskset -c 0,1,2 ./execs/quad_thread.o $i 1
+  taskset -c 0,1,2,3 ./execs/quad_thread.o $i 1
 done
