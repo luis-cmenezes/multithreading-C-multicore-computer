@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
         printf("\n\nIniciando execução com afinidade com 2 Threads número %s",argv[1]);
     }
 
+    printf("\n");
     // Inicializar M1 e M2 com valor 1
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
