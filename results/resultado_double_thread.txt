@@ -1,6 +1,11 @@
 
-Execução 1: 2.03077 segundos
-Execução 2: 1.97856 segundos
-Execução 3: 2.03141 segundos
-Execução 4: 1.99024 segundos
-Execução 5: 2.02147 segundos
+Execução sem afinidade 1: 2.10245 segundos
+Execução sem afinidade 2: 2.06319 segundos
+Execução sem afinidade 3: 2.07944 segundos
+Execução sem afinidade 4: 2.09297 segundos
+Execução sem afinidade 5: 2.09327 segundos
+Execução com afinidade 1: 2.08005 segundos
+Execução com afinidade 2: 2.07804 segundos
+Execução com afinidade 3: 2.05937 segundos
+Execução com afinidade 4: 2.10246 segundos
+Execução com afinidade 5: 2.06530 segundos

@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
 
     printf("\nFinalizou o preenchimento de M3.");
 
-    clock_gettime(CLOCK_MONOTONIC, &start_time);
+    clock_gettime(CLOCK_REALTIME, &start_time);
 
     // Criar as threads e atribuir a cada uma a responsabilidade de calcular uma parte de M3
     for (int i = 0; i < NUM_THREADS; i++) {
@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
         pthread_join(threads[i], NULL);
     }
 
-    clock_gettime(CLOCK_MONOTONIC, &end_time);
+    clock_gettime(CLOCK_REALTIME, &end_time);
     execution_time = (end_time.tv_sec - start_time.tv_sec) +
                      (end_time.tv_nsec - start_time.tv_nsec) / 1e9;
 
@@ -97,7 +97,12 @@ int main(int argc, char* argv[]) {
     }
 
     printf("Tempo levado: %.5f segundos\n", execution_time);
-    fprintf(file, "Execução %s: %.5f segundos\n", argv[1], execution_time);
+    if (atoi(argv[2]) == 0){
+        fprintf(file, "Execução sem afinidade %s: %.5f segundos\n", argv[1], execution_time);
+    }
+    else{
+        fprintf(file, "Execução com afinidade %s: %.5f segundos\n", argv[1], execution_time);
+    }
 
     fclose(file);
 
