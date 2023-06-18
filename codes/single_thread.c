@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 10000
+#define SIZE 7000
 
 int main(int argc, char *argv[]) {
     static int M1[SIZE][SIZE], M2[SIZE][SIZE], M3[SIZE][SIZE];

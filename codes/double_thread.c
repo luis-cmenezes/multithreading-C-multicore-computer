@@ -3,7 +3,7 @@
 #include <time.h>
 #include <pthread.h>
 
-#define SIZE 10000
+#define SIZE 7000
 #define NUM_THREADS 2
 
 // Estrutura para armazenar os argumentos das threads
