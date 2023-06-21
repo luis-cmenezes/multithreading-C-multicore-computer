@@ -16,7 +16,7 @@ O estudo de caso para relatório tem o seguinte planejamento:
 - [x] Desenvolvimento dos códigos Single e Multi-Thread
 - [x] Criação de um código de "carga de fundo" 
 - [x] Experimento e obtenção dos tempos de execução
-- [ ] Estática dos resultados obtidos
+- [x] Estátistica dos resultados obtidos
 - [ ] Redação do relatório técnico
 
 ## 💻 Conclusões
