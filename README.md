@@ -17,7 +17,7 @@ O estudo de caso para relatório tem o seguinte planejamento:
 - [x] Criação de um código de "carga de fundo" 
 - [x] Experimento e obtenção dos tempos de execução
 - [x] Estátistica dos resultados obtidos
-- [ ] Redação do relatório técnico
+- [x] Redação do relatório técnico
 
 ## 💻 Conclusões
 Os resultados evidenciam o comportamento esperado para as condições propostas. Com o tempo de execução da aplicação diminuindo proporcionalmente à quantidade threads criadas, com a execução em single thread como referência, a execução em dual thread executou em metade o tempo, e em quad thread um quarto do tempo original, para o cenário sem afinidade de processador.
